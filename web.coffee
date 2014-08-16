@@ -1,7 +1,7 @@
 ppo = require 'gzippo'
-express = require 'express'
+express = require 'morgan'
 
 app = express()
-app.use express.logger 'dev'
+app.use express 'dev'
 app.use gzippo.staticGzip "#{__dirname}/dist"
 app.listen process.env.PORT || 5000
